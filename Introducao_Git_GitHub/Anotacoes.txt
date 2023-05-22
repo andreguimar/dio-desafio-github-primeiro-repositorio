@@ -1,2 +1,61 @@
 Códigos curso 
 Links download do git: https://git-scm.com
+
+Anotações e lembranças sobre git/ GitHub
+
+COMANDO BÁSICO
+
+WINDOWS	MAC
+CD – ACESSAR UM DIRETÓRIO	CD
+DIR – LISTA DIRETÓRIO	LS
+	Ls -a lista pastas ocultas
+MKDIR – CRIA UM DIRETÓRIO	MKDIR
+CLS – LIMPAR TELA	CLEAR – LIMPAR TELA
+ECHO	
+RMDIR WORKSPACE /S /Q	RM – RF – NOME DO DIRETORIO
+Ls -a	Mostra pastas ocultas
+
+
+CHAVES SSH/ TOKENS
+
+ssh-keygen -t ed25519 -c email (andre.guimar@gmail.com)
+cd /users/andreguimaraes/.ssh para achar os arquivos
+cat para visualizar a chava (cat id_ed25519.pub) vai para o github a chave publica
+pwd mostra o caminho completo
+
+inicializar o ssh-agente
+
+eval $(ssh-agent -s) – cria um agente automaticamente
+ssh-add id_ed25519 (entrega a chave ao agente), vai pedir a senha
+
+
+
+INICIALIZANDO UM GIT 
+
+Cria o seu repositório com mkdir onde será realizado seus projetos
+Após criação da pasta vc inicializa dentro dela o GIT INIT – CRIA INICIALMENTE DENTRO DE UMA PASTA PADRAO O GIT
+Git config --global user.email “email” (“andre.guimar@gmail.com”)
+Git config --global user.name “andreguimar”
+Criar o arquivo.md
+ 
+Untracked – pasta não conhecida pelo git, mudada de uma pasta para outra,
+Unmodified – arquivo que ainda não sofreu modificação
+Modified – arquivo que foi modificado
+Staged é o estágio do arquivo que pode ser obtido através do git status
+Git add nome do arquivo/ pasta que se deseja incluir ou Git add * para adicionar tudo
+COMMIT –m “commit inicial” (frase que se deseja incluir, identificar o arquivo)
+Git status – mostra o status dos seus arquivos
+mv nome do arquivo/ pasta ./pasta destino– mover
+ 
+
+
+ENVIAR UM PROJETO DE UM REPOSITÓRIO LOCAL PARA O REPOSITÓRIO REMOTO NO GITHUB
+
+git config --list – lista a configuração do seu git, desejável que seja a mesma configuração do seu github
+git config --global unset user.email
+git config --global unset user.name
+vai no github cria o repositório para onde se deseja encaminhar seu projeto, vai ser criado um endereço ai vc puxa esse endereço pelo seu git no seu pc
+git remote add origin e coloca o enderço https extraído do github
+git remote -v – lista os repositórios remotos
+origin - apelido
+
